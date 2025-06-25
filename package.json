@@ -1,0 +1,27 @@
+{
+  "name": "dev-riman",
+  "version": "1.0.0",
+  "description": "wearekbeauty website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pistolricks/shopify-dev-riman.git"
+  },
+  "keywords": [
+    "shopify",
+    "ecommerce"
+  ],
+  "author": "erik smith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pistolricks/shopify-dev-riman/issues"
+  },
+  "homepage": "https://github.com/pistolricks/shopify-dev-riman#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.10",
+    "tailwindcss": "^4.1.10"
+  }
+}
