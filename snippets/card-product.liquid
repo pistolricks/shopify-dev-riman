@@ -145,7 +145,7 @@
 
                 {% comment %}QUICK ADD{% endcomment %}
 
-                <div class="tw:absolute tw:bottom-0 tw:right-0 tw:z-40">
+                <div class="tw:absolute tw:bottom-1 tw:right-1 tw:z-40">
                     {% assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id %}
                     {% if quick_add == 'standard' %}
                         {% comment %} class: quick-add {% endcomment %}
@@ -234,7 +234,7 @@
                                                 id="{{ product_form_id }}-submit"
                                                 type="submit"
                                                 name="add"
-                                                class="tw:w-full tw:text-base tw:uppercase tw:p-5 tw:cursor-pointer"
+                                                class="tw:w-full tw:text-base tw:uppercase tw:p-5 tw:cursor-pointer tw:border tw:border-gray-500 tw:rounded-full tw:hover:bg-gray-200/80 tw:bg-white/50"
                                                 aria-haspopup="dialog"
                                                 aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
                                                 aria-live="polite"
@@ -246,8 +246,8 @@
                                            <span class="">
                                              {%- if card_product.selected_or_first_available_variant.available -%}
 
-                                                 <span class="svg-wrapper">
-                                                    {{- 'icon-plus.svg' | inline_asset_content -}}
+                                                 <span class="svg-flex-wrapper tw:size-7">
+                                                    {{- 'icon-shopping.svg' | inline_asset_content -}}
                                                 </span>
 
                                                  {% comment %}

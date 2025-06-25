@@ -590,6 +590,25 @@ h3 .icon-arrow, .h3 .icon-arrow {
     width: 100%
 }
 
+.svg-flex-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.svg-flex-wrapper > svg {
+    height: 100%;
+    width: 100%;
+}
+
+.svg-flex-wrapper > svg:hover {
+    stroke: currentColor;
+
+}
+
+
+
 summary {
     cursor: pointer;
     list-style: none;
