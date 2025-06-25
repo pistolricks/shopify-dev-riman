@@ -54,7 +54,7 @@
                 style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
         >
             <div
-                    class="card__inner tw:bg-gray-50 {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %} tw:relative"
+                    class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %} tw:relative"
                     style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
                 {%- if card_product.featured_media -%}
                     <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
@@ -221,7 +221,7 @@
                                                 id="{{ product_form_id }}-submit"
                                                 type="submit"
                                                 name="add"
-                                                class="tw:w-full tw:text-base tw:uppercase tw:py-5 tw:bg-white/50"
+                                                class="tw:w-full tw:text-base tw:uppercase tw:py-5 tw:bg-gray-100/70"
                                                 aria-haspopup="dialog"
                                                 aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
                                                 aria-live="polite"
