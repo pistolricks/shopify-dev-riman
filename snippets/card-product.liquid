@@ -20,6 +20,9 @@
   Usage:
   {% render 'card-product', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
+
+{% comment %}TODO: Product title needs to use vendor -- and remove vendor name from product title{% endcomment %}
+
 {%- unless skip_styles -%}
     {{ 'component-rating.css' | asset_url | stylesheet_tag }}
     {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
