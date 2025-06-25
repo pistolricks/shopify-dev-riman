@@ -464,8 +464,10 @@
             </div>
             <div class="card__content">
                 <div class="card__information">
+
+                   {% comment %} PRODUCT TITLE {% endcomment %}
                     <h3
-                            class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
+                            class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h4{% endif %}   tw:capitalize  tw:min-h-20"
                             {% if card_product.featured_media or settings.card_style == 'card' %}
                                 id="title-{{ section_id }}-{{ card_product.id }}"
                             {% endif %}
@@ -481,6 +483,9 @@
                             {{ card_product.title | escape }}
                         </a>
                     </h3>
+
+                    {% comment %} END --- PRODUCT TITLE {% endcomment %}
+
                     <div class="card-information">
                         {%- if show_vendor -%}
                             <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>

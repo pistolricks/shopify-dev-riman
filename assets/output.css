@@ -1,4 +1,5 @@
 /*! tailwindcss v4.1.10 | MIT License | https://tailwindcss.com */
+@layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -8,10 +9,15 @@
       "Courier New", monospace;
     --tw-color-gray-100: oklch(96.7% 0.003 264.542);
     --tw-color-gray-300: oklch(87.2% 0.01 258.338);
+    --tw-color-gray-900: oklch(21% 0.034 264.665);
     --tw-color-white: #fff;
     --tw-spacing: 0.25rem;
     --tw-text-base: 1rem;
     --tw-text-base--line-height: calc(1.5 / 1);
+    --tw-text-lg: 1.125rem;
+    --tw-text-lg--line-height: calc(1.75 / 1.125);
+    --tw-font-weight-medium: 500;
+    --tw-font-weight-bold: 700;
     --tw-default-font-family: var(--tw-font-sans);
     --tw-default-mono-font-family: var(--tw-font-mono);
   }
@@ -177,6 +183,15 @@
   .tw\:z-40 {
     z-index: 40;
   }
+  .tw\:min-h-10 {
+    min-height: calc(var(--tw-spacing) * 10);
+  }
+  .tw\:min-h-20 {
+    min-height: calc(var(--tw-spacing) * 20);
+  }
+  .tw\:min-h-24 {
+    min-height: calc(var(--tw-spacing) * 24);
+  }
   .tw\:w-full {
     width: 100%;
   }
@@ -190,7 +205,42 @@
     font-size: var(--tw-text-base);
     line-height: var(--tw-leading, var(--tw-text-base--line-height));
   }
+  .tw\:text-lg {
+    font-size: var(--tw-text-lg);
+    line-height: var(--tw-leading, var(--tw-text-lg--line-height));
+  }
+  .tw\:font-bold {
+    --tw-font-weight: var(--tw-font-weight-bold);
+    font-weight: var(--tw-font-weight-bold);
+  }
+  .tw\:font-medium {
+    --tw-font-weight: var(--tw-font-weight-medium);
+    font-weight: var(--tw-font-weight-medium);
+  }
+  .tw\:text-balance {
+    text-wrap: balance;
+  }
+  .tw\:text-pretty {
+    text-wrap: pretty;
+  }
+  .tw\:text-gray-900 {
+    color: var(--tw-color-gray-900);
+  }
+  .tw\:capitalize {
+    text-transform: capitalize;
+  }
   .tw\:uppercase {
     text-transform: uppercase;
+  }
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-font-weight: initial;
+    }
   }
 }
