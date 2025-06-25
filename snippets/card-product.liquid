@@ -228,7 +228,7 @@
                                                 id="{{ product_form_id }}-submit"
                                                 type="submit"
                                                 name="add"
-                                                class="tw:w-full tw:text-base tw:uppercase tw:p-5 tw:bg-gray-100/70"
+                                                class="tw:w-full tw:text-base tw:uppercase tw:p-5 tw:cursor-pointer"
                                                 aria-haspopup="dialog"
                                                 aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
                                                 aria-live="polite"
@@ -237,7 +237,7 @@
                                                     disabled
                                                 {% endif %}
                                         >
-                                           <span>
+                                           <span class="">
                                              {%- if card_product.selected_or_first_available_variant.available -%}
 
                                                  <span class="svg-wrapper">
