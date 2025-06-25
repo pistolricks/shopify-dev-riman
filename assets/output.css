@@ -7,9 +7,11 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --tw-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --tw-color-gray-100: oklch(96.7% 0.003 264.542);
     --tw-color-gray-200: oklch(92.8% 0.006 264.531);
     --tw-color-gray-400: oklch(70.7% 0.022 261.325);
     --tw-color-gray-500: oklch(55.1% 0.027 264.364);
+    --tw-color-gray-600: oklch(44.6% 0.03 256.802);
     --tw-color-gray-900: oklch(21% 0.034 264.665);
     --tw-color-white: #fff;
     --tw-spacing: 0.25rem;
@@ -209,11 +211,25 @@
   .tw\:min-h-20 {
     min-height: calc(var(--tw-spacing) * 20);
   }
+  .tw\:min-h-24 {
+    min-height: calc(var(--tw-spacing) * 24);
+  }
   .tw\:w-full {
     width: 100%;
   }
   .tw\:cursor-pointer {
     cursor: pointer;
+  }
+  .tw\:divide-solid {
+    :where(& > :not(:last-child)) {
+      --tw-border-style: solid;
+      border-style: solid;
+    }
+  }
+  .tw\:divide-gray-600 {
+    :where(& > :not(:last-child)) {
+      border-color: var(--tw-color-gray-600);
+    }
   }
   .tw\:rounded-full {
     border-radius: calc(infinity * 1px);
@@ -221,6 +237,13 @@
   .tw\:border {
     border-style: var(--tw-border-style);
     border-width: 1px;
+  }
+  .tw\:border-b {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+  }
+  .tw\:border-gray-100 {
+    border-color: var(--tw-color-gray-100);
   }
   .tw\:border-gray-200 {
     border-color: var(--tw-color-gray-200);
@@ -236,6 +259,9 @@
   }
   .tw\:border-gray-500 {
     border-color: var(--tw-color-gray-500);
+  }
+  .tw\:border-gray-600 {
+    border-color: var(--tw-color-gray-600);
   }
   .tw\:bg-white\/50 {
     background-color: var(--tw-color-white);
