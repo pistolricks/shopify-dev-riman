@@ -7,6 +7,7 @@
     --tw-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --tw-color-red-800: oklch(44.4% 0.177 26.899);
+    --tw-spacing: 0.25rem;
     --tw-default-font-family: var(--tw-font-sans);
     --tw-default-mono-font-family: var(--tw-font-mono);
   }
@@ -157,6 +158,21 @@
   }
 }
 @layer utilities {
+  .tw\:absolute {
+    position: absolute;
+  }
+  .tw\:relative {
+    position: relative;
+  }
+  .tw\:inset-x-0 {
+    inset-inline: calc(var(--tw-spacing) * 0);
+  }
+  .tw\:top-0 {
+    top: calc(var(--tw-spacing) * 0);
+  }
+  .tw\:bottom-0 {
+    bottom: calc(var(--tw-spacing) * 0);
+  }
   .tw\:text-red-800 {
     color: var(--tw-color-red-800);
   }
