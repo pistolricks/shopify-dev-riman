@@ -184,6 +184,9 @@
   .tw\:bottom-0 {
     bottom: calc(var(--tw-spacing) * 0);
   }
+  .tw\:z-40 {
+    z-index: 40;
+  }
   .tw\:w-full {
     width: 100%;
   }
