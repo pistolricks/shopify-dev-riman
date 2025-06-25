@@ -54,7 +54,7 @@
                 style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
         >
             <div
-                    class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %} tw:relative"
+                    class="card__inner tw:border tw:border-gray-200 {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %} tw:relative"
                     style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
                 {%- if card_product.featured_media -%}
                     <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
@@ -148,7 +148,8 @@
                 <div class="tw:absolute tw:bottom-0 tw:inset-x-0">
                     {% assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id %}
                     {% if quick_add == 'standard' %}
-                        <div class="quick-add no-js-hidden">
+                        {% comment %}class: quick-add {% endcomment %}
+                        <div class="no-js-hidden">
                             {%- liquid
                                 assign qty_rules = false
                                 if card_product.selected_or_first_available_variant.quantity_rule.min > 1 or card_product.selected_or_first_available_variant.quantity_rule.max != null or card_product.selected_or_first_available_variant.quantity_rule.increment > 1
@@ -220,8 +221,7 @@
                                                 id="{{ product_form_id }}-submit"
                                                 type="submit"
                                                 name="add"
-                                                class="quick-add__submit button button--full-width button--secondary{% if horizontal_quick_add %} card--horizontal__quick-add{% endif %}"
-                                                {% comment %}class="quick-add__submit button button--full-width button--secondary{% if horizontal_quick_add %} card--horizontal__quick-add{% endif %}"{% endcomment %}
+                                                class="tw:w-full tw:border-t tw:border-gray-200 tw:text-base tw:uppercase tw:py-5 tw:hover:tw:bg-gray-400 button--secondary{% if horizontal_quick_add %} card--horizontal__quick-add{% endif %}"
                                                 aria-haspopup="dialog"
                                                 aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
                                                 aria-live="polite"
@@ -280,7 +280,8 @@
                                 {% endif %}
                             </quick-add-bulk>
                         {% else %}
-                            <div class="quick-add no-js-hidden">
+                            {% comment %}class: quick-add {% endcomment %}
+                            <div class="no-js-hidden">
                                 {%- liquid
                                     assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id
                                     assign qty_rules = false
@@ -292,11 +293,13 @@
                                         id="QuickBulk-{{ card_product.id }}-{{ section_id }}"
                                         data-modal="#QuickAddBulk-{{ card_product.id }}-{{ section.id }}"
                                 >
+
+                                    {% comment %}class: quick-add__submit button button--full-width button--secondary{% endcomment %}
                                     <button
                                             id="{{ product_form_id }}-submit"
                                             type="submit"
                                             name="add"
-                                            class="quick-add__submit button button--full-width button--secondary"
+                                            class=""
                                             aria-haspopup="dialog"
                                             aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
                                             data-product-url="{{ card_product.url }}"

@@ -1,4 +1,5 @@
 /*! tailwindcss v4.1.10 | MIT License | https://tailwindcss.com */
+@layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -7,7 +8,14 @@
     --tw-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --tw-color-red-800: oklch(44.4% 0.177 26.899);
+    --tw-color-gray-200: oklch(92.8% 0.006 264.531);
+    --tw-color-gray-400: oklch(70.7% 0.022 261.325);
+    --tw-color-gray-500: oklch(55.1% 0.027 264.364);
     --tw-spacing: 0.25rem;
+    --tw-text-sm: 0.875rem;
+    --tw-text-sm--line-height: calc(1.25 / 0.875);
+    --tw-text-base: 1rem;
+    --tw-text-base--line-height: calc(1.5 / 1);
     --tw-default-font-family: var(--tw-font-sans);
     --tw-default-mono-font-family: var(--tw-font-mono);
   }
@@ -173,7 +181,60 @@
   .tw\:bottom-0 {
     bottom: calc(var(--tw-spacing) * 0);
   }
+  .tw\:w-full {
+    width: 100%;
+  }
+  .tw\:border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .tw\:border-t {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 1px;
+  }
+  .tw\:border-gray-200 {
+    border-color: var(--tw-color-gray-200);
+  }
+  .tw\:border-gray-500 {
+    border-color: var(--tw-color-gray-500);
+  }
+  .tw\:py-2 {
+    padding-block: calc(var(--tw-spacing) * 2);
+  }
+  .tw\:py-5 {
+    padding-block: calc(var(--tw-spacing) * 5);
+  }
+  .tw\:text-base {
+    font-size: var(--tw-text-base);
+    line-height: var(--tw-leading, var(--tw-text-base--line-height));
+  }
+  .tw\:text-sm {
+    font-size: var(--tw-text-sm);
+    line-height: var(--tw-leading, var(--tw-text-sm--line-height));
+  }
   .tw\:text-red-800 {
     color: var(--tw-color-red-800);
+  }
+  .tw\:uppercase {
+    text-transform: uppercase;
+  }
+  .tw\:hover\:bg-gray-400 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--tw-color-gray-400);
+      }
+    }
+  }
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
+    }
   }
 }
